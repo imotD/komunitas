@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membuat segitiga piramid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="top">
+      <input type="number" name="num" id="num" placeholder="Tulis Baris">
+    </div>
+    <div class="box">
+      <pre>-- Result --</pre>
+      <p></p>
+    </div>
+  </div>
+
+  <script>
+    let star = document.querySelector('p').innerHTML;
+    let input = document.getElementById('num');
+    input.addEventListener('keyup', (e) => {
+      let x = document.getElementById('num').value;
+      submit(x)
+    })
+
+    function submit(x) {
+      for (let i = 0; i < x; i++) {
+
+        for (let n = x; n > i; n--) {
+          star += " ";
+        }
+        for (var s = 0; s <= i; s++) {
+          star += " *";
+        }
+        star += "<br>";
+      }
+      document.querySelector("p").innerHTML = star;
+      star = ""
+    }
+  </script>
+</body>
+
+</html>
